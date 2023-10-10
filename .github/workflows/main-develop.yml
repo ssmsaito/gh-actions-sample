@@ -19,5 +19,5 @@ jobs:
               "project_id": "${{ vars.PROJECT_ID }}"
             }
           result-encoding: json
-      - run: echo "${{steps.write-json.outputs.result}}" >> hoge.json
+      - run: echo '${{steps.write-json.outputs.result}}' >> hoge.json
       - run: cat hoge.json
