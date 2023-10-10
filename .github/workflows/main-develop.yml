@@ -11,8 +11,13 @@ jobs:
     environment:
       name: develop
     steps:
-      - run: echo deploy production
-      - run: echo "{" >> hoge.json
-      - run: echo '  "hoge" "${{ vars.PROJECT_ID }}"' >> hoge.json
-      - run: echo "}" >> hoge.json
+      - uses: actions/github-script@v3
+        id: write-json
+        with:
+          script: |
+            return {
+              "project_id": "${{ vars.PROJECT_ID }}"
+            }
+          result-encoding: json
+      - run: echo "${{steps.write-json.outputs.result}}" >> hoge.json
       - run: cat hoge.json
