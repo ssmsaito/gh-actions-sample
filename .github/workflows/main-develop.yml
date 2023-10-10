@@ -12,4 +12,4 @@ jobs:
       name: develop
     steps:
       - run: echo deploy production
-      - run: echo secret ${{ secrets.PROJECT_ID }}
+      - run: echo vars ${{ vars.PROJECT_ID }}
