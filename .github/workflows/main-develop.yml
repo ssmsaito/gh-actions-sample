@@ -13,6 +13,6 @@ jobs:
     steps:
       - run: echo deploy production
       - run: echo "{" >> hoge.json
-      - run: echo "  \"project_id\": \""${{ vars.PROJECT_ID }}"\"," >> hoge.json
+      - run: echo "  $vars.PROJECT_ID" >> hoge.json
       - run: echo "}" >> hoge.json
       - run: cat hoge.json
