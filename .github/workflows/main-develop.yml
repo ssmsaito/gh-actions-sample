@@ -16,8 +16,8 @@ jobs:
         with:
           script: |
             return JSON.stringify({
-              "project_id": "${{ vars.PROJECT_ID }}"
-            }, 2)
+              projectId: "${{ vars.PROJECT_ID }}"
+            }, null, '  ')
           result-encoding: string
       - run: echo '${{steps.write-json.outputs.result}}' >> hoge.json
       - run: cat hoge.json
