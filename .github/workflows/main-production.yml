@@ -1,17 +1,9 @@
-name: My Sample
+name: My Sample (production)
 
 on:
   workflow_dispatch:
 
 jobs:
-  deploy_staging:
-    runs-on: ubuntu-latest
-    environment:
-      name: develop
-    steps:
-      - run: echo deploy develop
-      - run: echo secret ${{ secrets.PROJECT_ID }}
-  
   deploy_production:
     runs-on: ubuntu-latest
     environment:
